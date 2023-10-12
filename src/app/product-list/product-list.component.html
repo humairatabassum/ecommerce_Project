@@ -1,7 +1,24 @@
-<h2>Product List</h2>
+<!-- <h2>Product List</h2>
 <div *ngFor="let pro of products">
   <h4>{{pro.id}}</h4>
   <h4>{{pro.name}}</h4>
   <h4>{{pro.price}}</h4>
   <h4>{{pro.description}}</h4>
+</div> -->
+
+<div class="container">
+  <h2 class="my-4">Product List</h2>
+  <div class="product-cards" >
+    <div class="product-card" *ngFor="let pro of products">
+      <div class="card-content" >
+        <h3 class="card-title">{{ pro.name }}</h3>
+        <p class="card-text">Price: {{ pro.price | currency:'USD':'symbol':'1.2-2' }}</p>
+        <p class="card-text">Description: {{ pro.description }}</p>
+        <!-- <a [routerLink]="['/product', pro.id]" class="card-link">View Details</a> -->
+        <button class="btn btn-success ht" (click)="addToCart(pro)">Add to Cart</button>
+        <button class="btn btn-primary ht " (click)="editProduct(pro.id)">Details</button>
+        <button class="btn btn-danger ht" (click)="deleteProduct(pro)">Delete</button>
+      </div>
+    </div>
+  </div>
 </div>
