@@ -10,8 +10,8 @@
 
       <h5>{{ product.price | currency:'USD':'symbol':'1.2-2' }}</h5>
       <p>{{ product.description }}</p>
-      <button class="btn btn-success ht" >Add to Cart</button>
-      <button class="btn btn-primary ht ">Edit</button>
+      <button class="btn btn-success ht" [routerLink]>Add to Cart</button>
+      <button class="btn btn-primary ht" (click)="editProduct(product.id)">Edit</button>
       <button class="btn btn-danger ht">Delete</button>
     </div>
   </div>

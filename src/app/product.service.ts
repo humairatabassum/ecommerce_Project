@@ -48,7 +48,10 @@ export class ProductService {
   }
 
   updateProduct(product: Product) {
-    return this.http.put<Product>(`${this.apiUrl}/products/${product.id}`, product);
+    console.log(product);
+    console.log(product.id);
+    return this.http.put<Product>(`${this.apiUrl}/${product.id}`, product);
+
   }
 
 

@@ -43,7 +43,12 @@ export class ProductCreateComponent {
       (response) => {
         console.log("Success: Product created.", response);
         this.router.navigate(['/list']);
+      }, error => {
+        
+        console.log("Error: Product not created.", error);
+        this.router.navigate(['/list']);  
       }
+
     );
 
   }

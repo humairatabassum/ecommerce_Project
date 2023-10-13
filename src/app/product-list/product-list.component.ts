@@ -54,7 +54,7 @@ export class ProductListComponent implements OnInit {
     this.products.push(product);
   }
 
-  editProduct(productId: number) {
+  detailsProduct(productId: number) {
     // Implement the logic for editing the product (e.g., navigate to the edit page)
     this.router.navigate(['/details', productId]); // Example route for editing
   }

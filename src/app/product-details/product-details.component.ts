@@ -3,6 +3,7 @@ import { Component } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from '../product';
 import { ProductService } from './../product.service';
+import { Router } from '@angular/router'; // Import the Router service
 
 @Component({
   selector: 'app-product-details',
@@ -17,9 +18,11 @@ export class ProductDetailsComponent {
     description: ""
   };
   constructor(
+    private router: Router ,
     private route: ActivatedRoute,
     private productService: ProductService,
     private location: Location
+    // Inject the Router service
   ) { }
 
   ngOnInit(): void {
@@ -29,6 +32,11 @@ export class ProductDetailsComponent {
   getProductById(id: number): void {
     this.productService.getProductById(id)
       .subscribe(product => this.product = product);
+  }
+
+  editProduct(id: number) {
+    // Implement the logic for editing the product (e.g., navigate to the edit page)
+    this.router.navigate(['/edit', id]); // Example route for editing
   }
 
   goBack(): void {
