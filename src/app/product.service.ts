@@ -13,14 +13,6 @@ export class ProductService {
   constructor(private http: HttpClient) { }
 
 
-
-  private handleError<T>(operation = 'operation', result?: T) {
-    return (error: any): Observable<T> => {
-      console.error(error);
-      return of(result as T);
-    };
-  }
-
   createProduct(product: Product): Observable<string> {
     return this.http.post<string>(this.apiUrl, product);
   }
@@ -53,6 +45,7 @@ export class ProductService {
     return this.http.put<Product>(`${this.apiUrl}/${product.id}`, product);
 
   }
+
 
 
 }
