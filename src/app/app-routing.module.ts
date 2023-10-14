@@ -6,6 +6,7 @@ import { ProductCreateComponent } from './product-create/product-create.componen
 import { ProductDetailsComponent } from './product-details/product-details.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductEditComponent } from './product-edit/product-edit.component';
+import { CartComponent } from './product-cart/product-cart.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'list', pathMatch: 'full' },
@@ -13,6 +14,7 @@ const routes: Routes = [
   { path: 'list', component: ProductListComponent },
   { path: 'details/:id', component: ProductDetailsComponent },
   { path: 'edit/:id', component: ProductEditComponent },
+  { path: 'cart', component: CartComponent }
 
 ];
 
